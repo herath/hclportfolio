@@ -8,8 +8,7 @@ import java.util.UUID;
 @Table(name = "portfolio_asset_details")
 public class PortfolioAssetDetails implements Serializable {
 	@Id
-	@GeneratedValue
-	@Column(name = "id", unique = true, nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@OneToOne(fetch = FetchType.LAZY)

@@ -1,10 +1,6 @@
 package com.portfolio.api.Portfolio.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -12,8 +8,7 @@ import java.io.Serializable;
 public class Asset implements Serializable {
 
 	@Id
-	@GeneratedValue
-	@Column(name = "id", unique = true, nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(name = "name")

@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 public class OrderDetails implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long portfolioId;

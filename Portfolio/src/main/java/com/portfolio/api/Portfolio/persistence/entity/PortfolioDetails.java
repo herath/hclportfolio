@@ -10,8 +10,7 @@ import java.util.UUID;
 public class PortfolioDetails implements Serializable {
 
 	@Id
-	@GeneratedValue
-	@Column(name = "id", unique = true, nullable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@OneToOne(fetch = FetchType.LAZY)
