@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "portfolio_details")
-public class PortfolioDetails {
+public class PortfolioDetails extends Auditable<String> {
 
 	@Id
 	@GeneratedValue

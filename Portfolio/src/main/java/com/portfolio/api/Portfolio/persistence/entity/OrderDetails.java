@@ -22,13 +22,13 @@ public class OrderDetails {
 
     private Long amount;
 
-    private Timestamp createdOn;
+    /*private Timestamp createdOn;
 
     private String createdBy;
 
     private Timestamp modifiedOn;
 
-    private String modifiedBy;
+    private String modifiedBy;*/
 
     public Long getId() {
         return id;
@@ -78,7 +78,7 @@ public class OrderDetails {
         this.amount = amount;
     }
 
-    public Timestamp getCreatedOn() {
+    /*public Timestamp getCreatedOn() {
         return createdOn;
     }
 
@@ -108,5 +108,5 @@ public class OrderDetails {
 
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
-    }
+    }*/
 }

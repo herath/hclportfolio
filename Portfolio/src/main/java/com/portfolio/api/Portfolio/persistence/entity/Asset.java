@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "assets")
-public class Asset {
+public class Asset extends Auditable<String>{
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable=false)

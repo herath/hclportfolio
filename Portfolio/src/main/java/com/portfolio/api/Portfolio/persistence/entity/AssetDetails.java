@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class AssetDetails {
+public class AssetDetails extends Auditable<String> {
 
     @Id
     @GeneratedValue
