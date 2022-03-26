@@ -4,6 +4,7 @@ public enum StatusMessages {
 
 	SUCCESS("Success!"),
 	ERROR_OCCURRED("Error Occurred"),
+	BAD_REQUEST("Bad Request, please check your request"),
 	UNPREDICTED_ERROR_OCCURRED("Unpredicted Error Occurred");
 
 	private String statusMessage;
@@ -19,6 +20,5 @@ public enum StatusMessages {
 	public void setStatusMessage(String statusMessage) {
 		this.statusMessage = statusMessage;
 	}
-	
-	
+
 }
