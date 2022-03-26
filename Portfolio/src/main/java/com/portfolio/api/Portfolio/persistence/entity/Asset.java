@@ -5,15 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.UUID;
 
 @Entity
 @Table(name = "assets")
 public class Asset {
+
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable=false)
-	private UUID id;
+	private Long id;
 
 	@Column(name = "name")
 	private String name;
@@ -21,11 +21,11 @@ public class Asset {
 	@Column(name = "remaining_qty")
 	private double remaining_qty;
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
