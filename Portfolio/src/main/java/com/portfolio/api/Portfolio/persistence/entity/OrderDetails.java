@@ -1,12 +1,11 @@
 package com.portfolio.api.Portfolio.persistence.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
-public class OrderDetails {
+public class OrderDetails implements Serializable {
 
     @Id
     @GeneratedValue
@@ -14,7 +13,9 @@ public class OrderDetails {
 
     private Long portfolioId;
 
-    private Long assetId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private Asset asset;
 
     private Integer quantity;
 
@@ -46,12 +47,12 @@ public class OrderDetails {
         this.portfolioId = portfolioId;
     }
 
-    public Long getAssetId() {
-        return assetId;
+    public Asset getAsset() {
+        return asset;
     }
 
-    public void setAssetId(Long assetId) {
-        this.assetId = assetId;
+    public void setAsset(Asset asset) {
+        this.asset = asset;
     }
 
     public Integer getQuantity() {
