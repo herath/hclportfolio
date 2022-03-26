@@ -23,13 +23,13 @@ public class OrderDetails implements Serializable {
 
     private Long amount;
 
-    private Timestamp createdOn;
+    /*private Timestamp createdOn;
 
     private String createdBy;
 
     private Timestamp modifiedOn;
 
-    private String modifiedBy;
+    private String modifiedBy;*/
 
     public Long getId() {
         return id;
@@ -79,7 +79,7 @@ public class OrderDetails implements Serializable {
         this.amount = amount;
     }
 
-    public Timestamp getCreatedOn() {
+    /*public Timestamp getCreatedOn() {
         return createdOn;
     }
 
@@ -109,5 +109,5 @@ public class OrderDetails implements Serializable {
 
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
-    }
+    }*/
 }

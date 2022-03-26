@@ -7,7 +7,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "portfolio_details")
-public class PortfolioDetails implements Serializable {
+public class PortfolioDetails extends Auditable<String> implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
