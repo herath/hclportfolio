@@ -28,15 +28,12 @@ public class GlobalExceptionHandler {
 	@ExceptionHandler(DataIntegrityViolationException.class)
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	public ResponseModel exceptionHandler(DataIntegrityViolationException ex) {
-		ex.printStackTrace();
 		return new ResponseModel(false, "HHH", null);
 	}
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ResponseModel exceptionHandler(MethodArgumentNotValidException ex) {
-        ex.printStackTrace();
-
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
@@ -47,7 +44,6 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    // @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ResponseModel globalExceptionHandler(Exception ex, WebRequest request) {
         ex.printStackTrace();
