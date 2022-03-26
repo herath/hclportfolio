@@ -30,7 +30,9 @@ public class PortfolioTest {
 
 		PortfolioDetails portfolioDetails = new PortfolioDetails();
 		portfolioDetails.setId(new UUID(0L, 0L));
-		por
+		portfolioDetails.setUser(user);
+		portfolioDetails.setRunnableBalance(55.00);
+		
 
 		//create portfolio asset details
 
