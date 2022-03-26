@@ -17,7 +17,7 @@ public class PortfolioAssetDetails {
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable=false)
-	private UUID id;
+	private Long id;
 
 	@OneToOne
 	@JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_fk"))
@@ -27,11 +27,11 @@ public class PortfolioAssetDetails {
 	@JoinColumn(name = "asset_id", foreignKey = @ForeignKey(name = "asset_fk"))
 	private Asset asset;
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
