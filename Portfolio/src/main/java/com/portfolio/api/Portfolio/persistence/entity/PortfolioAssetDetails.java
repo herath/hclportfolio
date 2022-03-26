@@ -1,30 +1,23 @@
 package com.portfolio.api.Portfolio.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
 @Table(name = "portfolio_asset_details")
-public class PortfolioAssetDetails {
+public class PortfolioAssetDetails implements Serializable {
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable=false)
 	private Long id;
 
-	@OneToOne
-	@JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_fk"))
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
 	private User name;
 
-	@OneToMany
-	@JoinColumn(name = "asset_id", foreignKey = @ForeignKey(name = "asset_fk"))
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
 	private Asset asset;
 
 	public Long getId() {

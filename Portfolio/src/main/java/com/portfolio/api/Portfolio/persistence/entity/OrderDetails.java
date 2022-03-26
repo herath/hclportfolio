@@ -13,7 +13,7 @@ public class OrderDetails implements Serializable {
 
     private Long portfolioId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id")
     private Asset asset;
 

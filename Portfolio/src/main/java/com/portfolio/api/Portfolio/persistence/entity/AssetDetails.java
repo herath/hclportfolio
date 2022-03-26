@@ -3,9 +3,10 @@ package com.portfolio.api.Portfolio.persistence.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class AssetDetails {
+public class AssetDetails implements Serializable {
 
     @Id
     @GeneratedValue
