@@ -1,6 +1,4 @@
-package com.portfolio.persistence;
-
-import org.hibernate.annotations.Generated;
+package com.portfolio.api.Portfolio.persistence.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
