@@ -9,4 +9,6 @@ public class PortfolioResponse {
 	private double runningBalance;
 
 	private List<Asset> assets;
+
+	private double qty;
 }
