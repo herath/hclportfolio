@@ -1,6 +1,6 @@
 package com.portfolio.api.Portfolio.persistence.repository;
 
-import com.portfolio.api.Portfolio.persistence.Entity.AssetDetails;
+import com.portfolio.api.Portfolio.persistence.entity.AssetDetails;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
