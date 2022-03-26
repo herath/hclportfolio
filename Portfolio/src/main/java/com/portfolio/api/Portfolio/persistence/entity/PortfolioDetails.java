@@ -11,7 +11,7 @@ public class PortfolioDetails {
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable=false)
-	private Long id;
+	private UUID id;
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id")
@@ -22,11 +22,11 @@ public class PortfolioDetails {
 
 	private Date timestamp;
 
-	public Long getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 

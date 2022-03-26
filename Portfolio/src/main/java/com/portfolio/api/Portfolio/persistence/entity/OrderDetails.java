@@ -14,7 +14,7 @@ public class OrderDetails implements Serializable {
     private Long portfolioId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "asset_id", foreignKey = @ForeignKey(name = "asset_fk"))
     private Asset asset;
 
     private Integer quantity;
