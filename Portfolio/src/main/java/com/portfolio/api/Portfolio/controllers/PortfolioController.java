@@ -10,18 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
-@Api(value = "Portfolio Management")
 @RestController
 @RequestMapping("/portfolio")
 public class PortfolioController {
 
 
-	@GetMapping("/summary/{user-id}")
-	public ResponseEntity<?> getAllPortfoliosForUser(@ApiParam(required = true) @PathVariable String transferId)
-			throws JsonParseException, JsonMappingException, IOException {
-
-		ApexTransferResponse response = brokerageProviderTransactionService.getTransferStatus(transferId);
-
+	@GetMapping("/summary/{userId}")
+	public ResponseEntity<?> getAllPortfoliosForUser( @PathVariable String userId)
+	{
 		return ResponseEntity.ok(response);
 	}
 }
