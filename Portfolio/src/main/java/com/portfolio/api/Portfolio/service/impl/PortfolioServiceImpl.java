@@ -1,5 +1,6 @@
 package com.portfolio.api.Portfolio.service.impl;
 
+import com.portfolio.api.Portfolio.UserNotFoundException;
 import com.portfolio.api.Portfolio.dto.PortfolioResponse;
 import com.portfolio.api.Portfolio.persistence.entity.PortfolioAssetDetails;
 import com.portfolio.api.Portfolio.persistence.entity.PortfolioDetails;
@@ -38,6 +39,7 @@ public class PortfolioServiceImpl implements PortfolioService {
 		}
 		else{
 			log.error("User not found!");
+			throw new UserNotFoundException();
 		}
 		return null;
 	}

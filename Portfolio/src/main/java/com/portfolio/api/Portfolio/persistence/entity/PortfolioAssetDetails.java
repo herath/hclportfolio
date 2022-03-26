@@ -10,7 +10,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import java.util.UUID;
 
 @Entity
 @Table(name = "portfolio_asset_details")
@@ -24,9 +23,12 @@ public class PortfolioAssetDetails {
 	@JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_fk"))
 	private User name;
 
-	@OneToMany
+	@OneToOne
 	@JoinColumn(name = "asset_id", foreignKey = @ForeignKey(name = "asset_fk"))
 	private Asset asset;
+
+	@Column(name = "qty")
+	private double qty;
 
 	public Long getId() {
 		return id;
@@ -50,5 +52,13 @@ public class PortfolioAssetDetails {
 
 	public void setAsset(Asset asset) {
 		this.asset = asset;
+	}
+
+	public double getQty() {
+		return qty;
+	}
+
+	public void setQty(double qty) {
+		this.qty = qty;
 	}
 }
