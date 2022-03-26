@@ -3,9 +3,10 @@ package com.portfolio.api.Portfolio.persistence.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class AssetDetails extends Auditable<String> {
+public class AssetDetails extends Auditable<String> implements Serializable {
 
     @Id
     @GeneratedValue

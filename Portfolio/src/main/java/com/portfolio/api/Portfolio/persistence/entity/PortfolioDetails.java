@@ -1,12 +1,13 @@
 package com.portfolio.api.Portfolio.persistence.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
 @Table(name = "portfolio_details")
-public class PortfolioDetails extends Auditable<String> {
+public class PortfolioDetails extends Auditable<String> implements Serializable {
 
 	@Id
 	@GeneratedValue
