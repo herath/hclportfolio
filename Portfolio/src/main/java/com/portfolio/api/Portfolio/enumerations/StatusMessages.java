@@ -3,7 +3,8 @@ package com.portfolio.api.Portfolio.enumerations;
 public enum StatusMessages {
 
 	SUCCESS("Success!"),
-	ERROR_OCCURRED("Error Occurred");
+	ERROR_OCCURRED("Error Occurred"),
+	UNPREDICTED_ERROR_OCCURRED("Unpredicted Error Occurred");
 
 	private String statusMessage;
 	
