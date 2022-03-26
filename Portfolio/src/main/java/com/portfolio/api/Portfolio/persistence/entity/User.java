@@ -5,16 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable=false)
-	private UUID id;
+	private Long id;
 
 	@Column(name = "username", unique = true, nullable=false)
 	private String username;
@@ -22,11 +23,11 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	public UUID getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

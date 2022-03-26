@@ -1,13 +1,7 @@
 package com.portfolio.api.Portfolio.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -17,12 +11,46 @@ public class PortfolioDetails {
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable=false)
-	private UUID id;
+	private Long id;
 
-	@ManyToOne
-	@JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "user_fk"))
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id")
 	private User user;
 
 	@Column(name = "runnable_balance")
 	private double runnableBalance;
+
+	private Date timestamp;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public double getRunnableBalance() {
+		return runnableBalance;
+	}
+
+	public void setRunnableBalance(double runnableBalance) {
+		this.runnableBalance = runnableBalance;
+	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
 }
