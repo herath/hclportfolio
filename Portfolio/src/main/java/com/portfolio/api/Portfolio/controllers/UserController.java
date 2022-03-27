@@ -12,8 +12,6 @@ public class UserController {
 
     @GetMapping(value = "/test")
     public ResponseModel test() {
-        // logger.debug("Test API call..");
-        System.out.println("Loggin in sysout 1");
         return new ResponseModel(true);
     }
 

@@ -1,19 +1,15 @@
-package com.portfolio.api.Portfolio.persistence.entity;
+package com.portfolio.api.Portfolio.models;
 
-import javax.persistence.*;
+import com.portfolio.api.Portfolio.persistence.entity.OrderDetails;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Entity
-public class TransactionDetails implements Serializable {
+public class TransactionDetailsDto implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
     private OrderDetails orderDetails;
 
     private BigDecimal transactionAmount;
@@ -24,18 +20,13 @@ public class TransactionDetails implements Serializable {
 
     private String transactionStatus;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    private User createdBy;
+    private UserDto createdBy;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    private User modifiedBy;
+    private UserDto modifiedBy;
 
     private Date createdOn;
 
     private Date modifiedOn;
-
 
     public Long getId() {
         return id;
@@ -85,19 +76,19 @@ public class TransactionDetails implements Serializable {
         this.transactionStatus = transactionStatus;
     }
 
-    public User getCreatedBy() {
+    public UserDto getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(User createdBy) {
+    public void setCreatedBy(UserDto createdBy) {
         this.createdBy = createdBy;
     }
 
-    public User getModifiedBy() {
+    public UserDto getModifiedBy() {
         return modifiedBy;
     }
 
-    public void setModifiedBy(User modifiedBy) {
+    public void setModifiedBy(UserDto modifiedBy) {
         this.modifiedBy = modifiedBy;
     }
 

@@ -13,6 +13,8 @@ public class OrderDetails implements Serializable {
 
     private Long portfolioId;
 
+    private String orderRefNo;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id")
     private Asset asset;
@@ -22,14 +24,6 @@ public class OrderDetails implements Serializable {
     private String transactionType;
 
     private Long amount;
-
-    /*private Timestamp createdOn;
-
-    private String createdBy;
-
-    private Timestamp modifiedOn;
-
-    private String modifiedBy;*/
 
     public Long getId() {
         return id;
@@ -79,35 +73,11 @@ public class OrderDetails implements Serializable {
         this.amount = amount;
     }
 
-    /*public Timestamp getCreatedOn() {
-        return createdOn;
+    public String getOrderRefNo() {
+        return orderRefNo;
     }
 
-    public void setCreatedOn(Timestamp createdOn) {
-        this.createdOn = createdOn;
+    public void setOrderRefNo(String orderRefNo) {
+        this.orderRefNo = orderRefNo;
     }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Timestamp getModifiedOn() {
-        return modifiedOn;
-    }
-
-    public void setModifiedOn(Timestamp modifiedOn) {
-        this.modifiedOn = modifiedOn;
-    }
-
-    public String getModifiedBy() {
-        return modifiedBy;
-    }
-
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
-    }*/
 }

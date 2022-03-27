@@ -35,7 +35,7 @@ public class ResponseModel implements Serializable {
     }
 
     public ResponseModel(Object data) {
-        this.status = true;
+        this.status = false;
         this.statusMessage = StatusMessages.SUCCESS.getStatusMessage();
         this.data = data;
     }
